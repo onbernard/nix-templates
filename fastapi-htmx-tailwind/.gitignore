@@ -1,0 +1,21 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# python venv
+.venv/
+
+# direnv
+.direnv/
+
+# javascript packages
+node_modules/
+
+tests-local/
+
+# tailwindcss generated files
+static/css/app.css

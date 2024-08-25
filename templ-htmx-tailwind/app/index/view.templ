@@ -1,0 +1,15 @@
+package index
+
+import (
+  "main/app/base"
+)
+
+templ Index(name string) {
+  @base.DocType()
+  @base.Head("HTML Example")
+  @base.Body(pageIndex(name))
+}
+
+templ pageIndex(name string) {
+  <div class="m-6 p-2 border-2 border-black">Hello, {name }!</div>
+}

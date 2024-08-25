@@ -1,0 +1,36 @@
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "Skeleton project in Python with fastapi, htmx and tailwindcss"
+dependencies = [
+    "fastapi[standard]>=0.112.1",
+    "uvicorn[standard]>=0.30.6",
+    "jinja2>=3.1.4",
+    "python-multipart>=0.0.9",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[project.scripts]
+"run-app" = "my_project.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ipykernel>=6.29.5",
+    "ruff>=0.6.1",
+    "pyright>=1.1.376",
+    "arel>=0.3.0",
+]
+
+[tool.rye.scripts]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/my_project"]
