@@ -19,6 +19,10 @@
       path = ./fastapi-htmx-tailwind;
       description = "Skeleton project in Pythn setup with fastapi, tailwind and htmx";
     };
+    mojo = {
+      path = ./mojo;
+      description = "Mojo template";
+    };
   };
 
   };
