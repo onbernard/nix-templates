@@ -28,6 +28,15 @@
           path = ./zig;
           description = "Zig template";
         };
+        python-rye = {
+          path = ./python-rye;
+          description = "Python with rye template";
+          welcomeText = ''
+            # Getting started
+            - Run `nix develop`
+            - Run `rye init && rye sync`
+          '';
+        };
       };
     };
 }
