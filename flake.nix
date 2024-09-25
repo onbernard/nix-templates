@@ -37,6 +37,10 @@
             - Run `rye init && rye sync`
           '';
         };
+        basic-template = {
+          path = ./basic-template;
+          description = "A basic template";
+        };
       };
     };
 }
