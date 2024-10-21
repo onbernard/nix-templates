@@ -5,8 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = inputs@{ self, ... }:
-    with inputs;
+  outputs = { ... }:
     {
       templates = {
         templ-htmx-tailwind = {
@@ -40,6 +39,10 @@
         basic-template = {
           path = ./basic-template;
           description = "A basic template";
+        };
+        rust = {
+          path = ./rust;
+          description = "Rust template";
         };
       };
     };
