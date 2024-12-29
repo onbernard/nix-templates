@@ -44,6 +44,10 @@
           path = ./rust;
           description = "Rust template";
         };
+        typst = {
+          path = ./typst;
+          description = "Typst template";
+        };
       };
     };
 }
