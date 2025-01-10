@@ -36,6 +36,15 @@
             - Run `rye init && rye sync`
           '';
         };
+        python-uv = {
+          path = ./python-uv;
+          description = "Python with uv template";
+          welcomeText = ''
+            # Getting started
+            - Run `nix develop`
+            - Run `uv init && uv sync`
+          '';
+        };
         basic-template = {
           path = ./basic-template;
           description = "A basic template";
