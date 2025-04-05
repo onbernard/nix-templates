@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Dotnet flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -15,9 +15,18 @@
         };
       in {
         devShell = pkgs.mkShell {
-          packages = [];
+          packages = with pkgs; [
+            (with dotnetCorePackages;
+              combinePackages [
+                sdk_8_0
+                dotnet_8.aspnetcore
+                dotnet_8.runtime
+              ])
+            nuget-to-nix
+            nuget-to-json
+          ];
           shellHook = ''
-            echo "uwu"
+            export DOTNET_CLI_TELEMETRY_OPTOUT=1
           '';
         };
       });
