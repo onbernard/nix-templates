@@ -43,7 +43,6 @@
         adslib
         pythonEnv
         gccLib
-        haproxy
       ];
       shellHook = ''
         export LD_LIBRARY_PATH=${gccLib}/lib:$LD_LIBRARY_PATH
