@@ -60,6 +60,10 @@
         path = ./dotnet;
         description = "Dotnet template";
       };
+      ads = {
+        path = ./ads;
+        description = "ADS template";
+      };
     };
   };
 }
