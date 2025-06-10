@@ -1,0 +1,25 @@
+{
+    "recommendations": [
+        "ms-pyright.pyright",
+        "charliermarsh.ruff",
+        "ms-python.python",
+        "kevinrose.vsc-python-indent",
+        "njpwerner.autodocstring",
+        "usernamehw.errorlens",
+        "ms-toolsai.jupyter-keymap",
+        "vscodevim.vim",
+        "ms-toolsai.datawrangler",
+        "fill-labs.dependi",
+        "mkhl.direnv",
+        "tamasfe.even-better-toml",
+        "nhoizey.gremlins",
+        "oderwat.indent-rainbow",
+        "ms-python.isort",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-python.debugpy",
+        "njqdev.vscode-python-typehint"
+    ]
+}
