@@ -15,7 +15,9 @@
         };
       in {
         devShell = pkgs.mkShell {
-          packages = [];
+          packages = with pkgs; [
+            dprint
+          ];
           shellHook = ''
             echo "uwu"
           '';
