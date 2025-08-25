@@ -25,6 +25,11 @@
       zig = {
         path = ./zig;
         description = "Zig template";
+        welcomeText = ''
+          # Getting started
+          - run `nix develop`
+          - run `zig init`
+        '';
       };
       python-rye = {
         path = ./python-rye;
