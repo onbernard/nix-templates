@@ -3,7 +3,7 @@ command = "nixd"
 args = ["--semantic-tokens=true"]
 
 [language-server.zls]
-command = ["zls"]
+command = "zls"
 config.zls.enable_build_on_save = true
 config.zls.build_on_save_step = "check"
 

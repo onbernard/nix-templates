@@ -32,6 +32,7 @@
               zls.inputs.zig-overlay.packages.${system}.default
               zls.packages.${system}.zls
               # zig-overlay.packages.${system}.master # Latest version
+              pkgs.lldb # Debugger
             ];
           };
         }
