@@ -27,6 +27,10 @@
         in {
           devShell = pkgs.mkShell {
             packages = [
+              dprint # Markdown
+              alejandra # Nix code formatter
+              nixd # Nix language server
+              taplo # TOML toolkit
               # pkgs.zls
               # pkgs.zig
               zls.inputs.zig-overlay.packages.${system}.default
