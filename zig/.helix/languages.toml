@@ -1,0 +1,29 @@
+[language-server.nixd]
+command = "nixd"
+args = ["--semantic-tokens=true"]
+
+[language-server.zls]
+command = ["zls"]
+config.zls.enable_build_on_save = true
+config.zls.build_on_save_step = "check"
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+auto-format = true
+
+[[language]]
+name = "nix"
+formatter = { command = "alejandra" }
+auto-format = true
+file-types = ["nix"]
+language-servers = ["nixd"]
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "zig"
+language-servers = ["zls"]

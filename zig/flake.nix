@@ -29,8 +29,9 @@
             packages = [
               # pkgs.zls
               # pkgs.zig
-              zig-overlay.packages.${system}.master # Latest version
-              zls.packages.${system}.zls # Latest version
+              zls.inputs.zig-overlay.packages.${system}.default
+              zls.packages.${system}.zls
+              # zig-overlay.packages.${system}.master # Latest version
             ];
           };
         }
