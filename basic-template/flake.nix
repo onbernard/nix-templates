@@ -16,7 +16,10 @@
       in {
         devShell = pkgs.mkShell {
           packages = with pkgs; [
-            dprint
+            dprint # Markdown
+            alejandra # Nix code formatter
+            nixd # Nix language server
+            taplo # TOML toolkit
           ];
           shellHook = ''
             echo "uwu"
