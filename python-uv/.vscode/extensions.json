@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "ms-pyright.pyright",
         "charliermarsh.ruff",
         "ms-python.python",
         "kevinrose.vsc-python-indent",
