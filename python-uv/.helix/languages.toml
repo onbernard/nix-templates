@@ -1,0 +1,38 @@
+[language-server.nixd]
+command = "nixd"
+args = ["--semantic-tokens=true"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = {python.analysis = {typeCheckingMode = "strict", autoImportCompletions = true}, reportMissingTypeStubs = false}
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+auto-format = true
+
+[[language]]
+name = "nix"
+formatter = {command = "alejandra"}
+auto-format = true
+file-types = ["nix"]
+language-servers = ["nixd"]
+
+[[language]]
+name = "toml"
+formatter = {command = "taplo", args = ["fmt", "-"]}
+auto-format = true
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "Poetry.lock", "uv.lock", ".git"]
+file-types = ["py", "pyi", "py3", "pyw", ".pythonstartup", ".pythonrc", ".ipynb"]
+formatter = {command = "black", args = ["--quiet", "-"]}
+auto-format = true
+language-servers = ["ruff", "pyright"]
+
