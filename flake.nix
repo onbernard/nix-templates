@@ -69,6 +69,10 @@
         path = ./ads;
         description = "ADS template";
       };
+      golang = {
+        path = ./golang;
+        description = "Golang template";
+      };
     };
   };
 }
