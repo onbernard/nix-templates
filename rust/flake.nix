@@ -44,6 +44,7 @@
             cargo-watch
             rust-analyzer
             stdenv.cc.cc.lib
+            lldb
           ];
           env = {
             RUST_BACKTRACE = "1";
