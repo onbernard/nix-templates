@@ -16,6 +16,7 @@
       in {
         devShell = pkgs.mkShell {
           packages = with pkgs; [
+            uv
             dprint # Markdown
             alejandra # Nix code formatter
             nixd # Nix language server
