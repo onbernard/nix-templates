@@ -73,6 +73,10 @@
         path = ./golang;
         description = "Golang template";
       };
+      cpp = {
+        path = ./cpp;
+        description = "C++ template";
+      };
     };
   };
 }

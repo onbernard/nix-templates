@@ -1,0 +1,26 @@
+[language-server.nixd]
+command = "nixd"
+args = ["--semantic-tokens=true"]
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+auto-format = true
+
+[[language]]
+name = "nix"
+formatter = { command = "alejandra" }
+auto-format = true
+file-types = ["nix"]
+language-servers = ["nixd"]
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "cpp"
+file-types = ["cpp", "cc", "cxx", "hpp", "hh", "hxx", "ipp", "tpp"]
+auto-format = true
+formatter = { command = "clang-format", args = [] }
