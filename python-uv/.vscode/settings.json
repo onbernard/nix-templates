@@ -1,4 +1,5 @@
 {
-  "workbench.editor.tabSizing": "fixed"
-  "vim.useSystemClipboard": true
+  "workbench.editor.tabSizing": "fixed",
+  "vim.useSystemClipboard": true,
+  "python.analysis.typeCheckingMode": "standard"
 }

@@ -1,4 +1,4 @@
 {
-  "workbench.editor.tabSizing": "fixed"
+  "workbench.editor.tabSizing": "fixed",
   "vim.useSystemClipboard": true
 }
