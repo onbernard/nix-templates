@@ -18,3 +18,9 @@ language-servers = ["nixd"]
 name = "toml"
 formatter = {command = "taplo", args = ["fmt", "-"]}
 auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer"]
+

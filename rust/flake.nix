@@ -18,7 +18,7 @@
           overlays = [
             rust-overlay.overlays.default
             (final: prev: {
-              rustToolchain = final.rust-bin.stable.latest.default.override {extensions = ["rust-src"];};
+              rustToolchain = final.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
             })
           ];
         };
@@ -42,9 +42,13 @@
             cargo-outdated
             cargo-udeps
             cargo-watch
-            rust-analyzer
             stdenv.cc.cc.lib
             lldb
+            # ...
+            dprint # Markdown
+            alejandra # Nix formatter
+            nixd # Nix language server
+            taplo # TOML toolkit
           ];
           env = {
             RUST_BACKTRACE = "1";
