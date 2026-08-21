@@ -1,5 +1,3 @@
-# Both options are nightly-only rustfmt features.
-
 # Split imports into std / external crates / crate-local blocks, sorted within each.
 group_imports = "StdExternalCrate"
 
