@@ -1,4 +1,6 @@
 {
   "workbench.editor.tabSizing": "fixed",
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+  "rust-analyzer.cargo.targetDir": true
 }
+
