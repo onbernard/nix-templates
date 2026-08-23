@@ -2,4 +2,11 @@
   "workbench.editor.tabSizing": "fixed",
   "vim.useSystemClipboard": true,
   "python.analysis.typeCheckingMode": "standard"
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit"
+    }
+  }
 }
