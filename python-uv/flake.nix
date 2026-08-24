@@ -24,7 +24,17 @@
             pyright # Python type checker
             ruff # Python linter
             black # Python code formatter
+            # ...
+            stdenv.cc.cc.lib
+            zlib
           ];
+          env = {
+            # numpy/matplotlib fix
+            LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+              pkgs.stdenv.cc.cc.lib
+              pkgs.zlib
+            ];
+          };
           shellHook = ''
             uv sync && source .venv/bin/activate
           '';
