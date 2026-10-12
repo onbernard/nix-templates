@@ -2,7 +2,6 @@
   description = "Collection of nix templates";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
   outputs = {...}: {
