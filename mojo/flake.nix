@@ -34,7 +34,7 @@
       system,
     }: {
       default = pkgs.mkShell {
-        buildInputs = [
+        packages = [
           rules_mojo.packages.${system}.mojo
         ];
         shellHook = ''

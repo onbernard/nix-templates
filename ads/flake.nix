@@ -37,7 +37,7 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [
+          packages = with pkgs; [
             ads-proxy
             adslib
             pythonEnv

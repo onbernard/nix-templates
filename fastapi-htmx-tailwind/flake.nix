@@ -16,7 +16,7 @@
         };
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [rye tailwindcss];
+          packages = with pkgs; [rye tailwindcss];
           shellHook = ''
             rye sync && source .venv/bin/activate
           '';
