@@ -16,29 +16,35 @@
     };
   };
 
-  outputs = inputs @ {self, ...}:
-    with inputs;
-      flake-utils.lib.eachDefaultSystem (
-        system: let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [zig-overlay.overlays.default];
-          };
-        in {
-          devShells.default = pkgs.mkShell {
-            packages = [
-              dprint # Markdown
-              alejandra # Nix code formatter
-              nixd # Nix language server
-              taplo # TOML toolkit
-              # pkgs.zls
-              # pkgs.zig
-              zls.inputs.zig-overlay.packages.${system}.default
-              zls.packages.${system}.zls
-              # zig-overlay.packages.${system}.master # Latest version
-              pkgs.lldb # Debugger
-            ];
-          };
-        }
-      );
+  outputs = {
+    self,
+    flake-utils,
+    nixpkgs,
+    zig-overlay,
+    zls,
+    ...
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [zig-overlay.overlays.default];
+        };
+      in {
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            dprint # Markdown
+            alejandra # Nix code formatter
+            nixd # Nix language server
+            taplo # TOML toolkit
+            # pkgs.zls
+            # pkgs.zig
+            zls.inputs.zig-flake.packages.${system}.nightly # Zig matching zls master
+            zls.packages.${system}.zls
+            # zig-overlay.packages.${system}.master # Latest version
+            pkgs.lldb # Debugger
+          ];
+        };
+      }
+    );
 }

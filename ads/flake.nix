@@ -11,7 +11,7 @@
       flake-utils.lib.eachDefaultSystem (system: let
         pkgs = import nixpkgs {
           inherit system;
-          overlay = [];
+          overlays = [];
         };
 
         pyads = pkgs.python3Packages.pyads;
