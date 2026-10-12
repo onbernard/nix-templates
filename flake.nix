@@ -16,7 +16,7 @@
       };
       fastapi-htmx-tailwind = {
         path = ./fastapi-htmx-tailwind;
-        description = "Skeleton project in Pythn setup with fastapi, tailwind and htmx";
+        description = "Skeleton project in Python setup with fastapi, tailwind and htmx";
       };
       mojo = {
         path = ./mojo;
