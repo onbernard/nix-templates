@@ -30,15 +30,6 @@
           - run `zig init`
         '';
       };
-      python-rye = {
-        path = ./python-rye;
-        description = "Python with rye template";
-        welcomeText = ''
-          # Getting started
-          - Run `nix develop`
-          - Run `rye init && rye sync`
-        '';
-      };
       python-uv = {
         path = ./python-uv;
         description = "Python with uv template";
