@@ -63,6 +63,14 @@
         path = ./golang;
         description = "Golang template";
       };
+      typescript = {
+        path = ./typescript;
+        description = "TypeScript with Bun template";
+        welcomeText = ''
+          - Run `nix develop`
+          - Run `bun init`
+        '';
+      };
       cpp = {
         path = ./cpp;
         description = "C++ template";
