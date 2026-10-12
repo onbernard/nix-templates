@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "golang.go",
         "oderwat.indent-rainbow",
         "usernamehw.errorlens",
         "mkhl.direnv"
