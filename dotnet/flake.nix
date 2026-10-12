@@ -6,28 +6,32 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs @ {self, ...}:
-    with inputs;
-      flake-utils.lib.eachDefaultSystem (system: let
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [];
-        };
-      in {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            (with dotnetCorePackages;
-              combinePackages [
-                sdk_8_0
-                dotnet_8.aspnetcore
-                dotnet_8.runtime
-              ])
-            nuget-to-nix
-            nuget-to-json
-          ];
-          shellHook = ''
-            export DOTNET_CLI_TELEMETRY_OPTOUT=1
-          '';
-        };
-      });
+  outputs = {
+    self,
+    flake-utils,
+    nixpkgs,
+    ...
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [];
+      };
+    in {
+      devShells.default = pkgs.mkShell {
+        packages = with pkgs; [
+          (with dotnetCorePackages;
+            combinePackages [
+              sdk_8_0
+              dotnet_8.aspnetcore
+              dotnet_8.runtime
+            ])
+          nuget-to-nix
+          nuget-to-json
+        ];
+        shellHook = ''
+          export DOTNET_CLI_TELEMETRY_OPTOUT=1
+        '';
+      };
+    });
 }
