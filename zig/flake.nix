@@ -25,7 +25,7 @@
             overlays = [zig-overlay.overlays.default];
           };
         in {
-          devShell = pkgs.mkShell {
+          devShells.default = pkgs.mkShell {
             packages = [
               dprint # Markdown
               alejandra # Nix code formatter

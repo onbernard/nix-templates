@@ -36,7 +36,7 @@
           ads-proxy = ads-proxy;
         };
 
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             ads-proxy
             adslib

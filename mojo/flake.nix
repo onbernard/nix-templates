@@ -29,17 +29,18 @@
           };
         });
   in {
-    devShell = forAllSystems ({
+    devShells = forAllSystems ({
       pkgs,
       system,
-    }:
-      pkgs.mkShell {
+    }: {
+      default = pkgs.mkShell {
         buildInputs = [
           rules_mojo.packages.${system}.mojo
         ];
         shellHook = ''
           mojo --version
         '';
-      });
+      };
+    });
   };
 }

@@ -30,11 +30,11 @@
           };
         });
   in {
-    devShell = forAllSystems ({
+    devShells = forAllSystems ({
       pkgs,
       system,
-    }:
-      pkgs.mkShell {
+    }: {
+      default = pkgs.mkShell {
         buildInputs = with pkgs; [
           go
           gopls
@@ -44,6 +44,7 @@
           templ.packages.${system}.templ
           tailwindcss
         ];
-      });
+      };
+    });
   };
 }

@@ -15,7 +15,7 @@
           overlays = [];
         };
       in {
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [rye tailwindcss];
           shellHook = ''
             rye sync && source .venv/bin/activate

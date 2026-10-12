@@ -14,7 +14,7 @@
           overlay = [];
         };
       in {
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             dprint # Markdown
             alejandra # Nix code formatter

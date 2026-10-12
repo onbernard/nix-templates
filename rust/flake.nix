@@ -23,7 +23,7 @@
           ];
         };
       in {
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             # (pkgs.rustPlatform.buildRustPackage {
             #   pname = ""; # Copy from cargo.toml
